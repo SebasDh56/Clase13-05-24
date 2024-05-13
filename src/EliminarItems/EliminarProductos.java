@@ -3,6 +3,7 @@ package EliminarItems;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ListIterator;
 
 public class EliminarProductos {
 
@@ -29,7 +30,21 @@ public class EliminarProductos {
 
 
     }
-    private static eliminarMarcaIterator(List<Producto>productos,List<String> marcas){
+
+    private static void eliminarMarcas(List<Producto>productos,List<String> marcas){
+
+        productos.removeIf((producto -> marcas.contains(producto.getMarca())));
+
+    }
+
+    private static void eliminarMarcaIterator(List<Producto>productos,List<String> marcas){
+
+        for (ListIterator<Producto> iterator=productos.listIterator(); iterator.hasNext(); ) {
+            if(marcas.contains(iterator.next().getMarca())){
+                iterator.remove();
+
+            }
+        }
 
 
 
