@@ -29,6 +29,7 @@ public class EliminarProductos {
         productos.forEach(System.out::println);
 
 
+
     }
 
     private static void eliminarMarcas(List<Producto>productos,List<String> marcas){
